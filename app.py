@@ -36,7 +36,7 @@ TODAY = pd.Timestamp(date.today())  # 오늘 날짜
 # ── 데이터 로드 ──────────────────────────────────────────────
 def read_excel_with_xlwings_IT(filename, sheet_name1, sheet_name2):
     print("=" * 50)
-    print("📂 엑셀 파일 열기:", filename)
+    print("--- 엑셀 파일 열기:", filename)
     print("=" * 50)
 
     # ── 1) Excel 앱을 통해 파일 열기 ──────────────────
@@ -76,12 +76,12 @@ def read_excel_with_xlwings_IT(filename, sheet_name1, sheet_name2):
         today_df =today_df.fillna("")  # None -> 공백으로 표시
         st.dataframe(today_df, use_container_width=True)
 
-        # print(f"\n📊 전체 데이터 shape: {df.shape} (행 수, 열 수)")
+        # print(f"\n 전체 데이터 shape: {df.shape} (행 수, 열 수)")
         # print(f" 컬럼 목록: {list(df.columns)}")
         # print()
         # # ── 4) 한 줄씩 읽기 ───────────────────────────
         # print("-" * 50)
-        # print("📋 한 줄씩 읽기 시작")
+        # print(" 한 줄씩 읽기 시작")
         # print("-" * 50)
         #
         # for row_index, row in df.iterrows():
@@ -95,7 +95,7 @@ def read_excel_with_xlwings_IT(filename, sheet_name1, sheet_name2):
         #         print(f"  {col_name} : {value}")
         #
         # print("\n" + "=" * 50)
-        # print("✅ 읽기 완료!")
+        # print(" 읽기 완료!")
         # print("=" * 50)
 
         #return df # DataFrame을 반환 (다른 곳에서 활용 가능)
@@ -124,7 +124,7 @@ def read_excel_with_xlwings_IT(filename, sheet_name1, sheet_name2):
         # 파일 닫기 + Excel 앱 종료 (안하면 Excel이 백그라운드에 남아있음)
         book.close()
         app.quit()
-        print("🔒 엑셀 파일 닫기 완료")
+        print("--- 엑셀 파일 닫기 완료")
 
 
 # ──────────────────────────────────────────
